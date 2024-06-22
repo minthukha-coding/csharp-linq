@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Assignment1
 {
@@ -22,7 +24,18 @@ namespace Assignment1
                 // Part 3: Select
 
             // Step 3: Executing query
-            
+
+            List<int> ints = new List<int>() {1,2,3,4,5,6,7,8,9,10};
+            // IEnumerable<int> query = from q in ints
+            //                             .Where q % 2 == 0
+            //                             .select q;
+            var query = from q in ints
+                        where q % 2 == 0
+                        select q;  
+                    
+            foreach (var item in query){
+                Console.WriteLine(item.ToString());
+            }
         }
     }
 }
